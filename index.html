@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Renda</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+   
+</head>
+<body>
+    
+    <header>
+        <h1>Calculando renda fixa</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="texto">
+                
+                <p>Antes de investir em qualquer produto bancário é importante saber o quanto ele irá te render no longo prazo, o juros compostos é o principal cálculo que mostrará sua rentabilidade. Temos que ficar atento na inflação, pois ela é o vilão da renda fixa, mesmo que não perca dinheiro em renda fixa vale ressaltar que a inflação desvaloriza o investimento fazendo com que perca poder de compra, mas aqui temos uma calculadora de inflação que irá conseguir ter uma noção do quanto seu investimento irá ser afetado pela inflação. </p> 
+            </div>
+    
+            <div class="container-composto">
+                <h3>Calculadora <br>Juros Compostos</h3>
+                <div class="composto">
+            
+                    <div>
+                        <p>Aporte Inicial</p>
+                        <input type="text" name='capital' id="cap" placeholder="R$ 0,00">
+                    </div>
+                    <div>
+                        <p>Juros mensal</p>
+                        <input type="text" name="juros" id="jur" placeholder="0,00">
+                    </div>
+                    <div>
+                        <p>Tempo em meses</p>
+                        <input type="text" name='tempo' id="tem" >
+                    </div>
+            
+                
+                    <div class="limpar">
+                        <input type="submit" id="botao" onclick="jurosComposto()" value="Calcular">
+                        <input type="submit" value="Limpar" onclick="carregar()">
+                    </div>
+                
+            
+                </div>
+        
+                <div id="resCom">
+                    
+                </div>
+                
+            </div>
+    
+            <div class="container-cdi">
+                <h3>Calculadora <br>CDI</h3>
+                <div class="cdi">
+                    <div>
+                        <p>CDI</p>
+                        <input type="text" id="cdi" placeholder="CDI atual EX: 6,25%">
+                    </div>
+                    <div>
+                        <p>Taxa do CDI</p>
+                        <input type="text" id="tcdi" placeholder="EX: 120% do CDI"><br>
+                    </div>
+            
+                    <div class="limpar">
+                        <input type="submit" value="Calcular" onclick="taxaCdi()">
+                        <input type="submit" value="Limpar" onclick="carregar()">
+                    </div>
+                </div>   
+                <div id="resCdi">
+                    
+                </div>
+            
+                <p class="link">Para descubrir a taxa CDI atual <a href="https://www.b3.com.br/pt_br/" target="_blank"><strong>Clique aqui.</strong></a></p>
+            </div>
+    
+
+            <div class="container-ipca">
+                <h3>Calculadora <br>Rentabilidade (Inflação)</h3>
+                <div class="ipca">
+                    <div>
+                        <p>Rentabilidade</p>
+                        <label for=""></label>
+                        <input type="text" id="rent" placeholder="Rentabilidade Anual">
+                    </div>
+                    <div>
+                        <p>IPCA (Inflação)</p>
+                        <input type="text" id="ipca" placeholder="IPCA Acumulado"> <br>
+                    </div>
+                
+                    <div class="limpar">
+                        <input type="submit" value="Calcular" onclick="calIpca()">
+                        <input type="submit" value="Limpar" onclick="carregar()">
+                    </div>
+                    
+                
+                </div>         
+                <div id="resIpca">
+        
+                </div>
+                
+                <p class="link">Para descobrir o IPCA acumulado <a href="https://www.ibge.gov.br/explica/inflacao.php" target="_blank"><strong>Clique aqui.</strong></a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

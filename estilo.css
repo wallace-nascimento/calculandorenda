@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+.composto, .cdi, .ipca{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+    justify-content: center;
+}
+
+body{
+    background: #e0e1d9;
+    font-family: 'Open Sans';
+    color: #2F1C6A;
+}
+
+.container-cdi, .container-composto, .container-ipca{
+    background-color: #e0e1d9; 
+    padding: 40px;
+    max-height: 100%;
+    font-size: 1.5rem;
+}
+
+.link {
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+}
+.container input[type="submit"]{
+    height: 20px;
+    margin: 50px 0px 50px 0px;
+    height: 40px;
+    width: 210px;
+    font-size: 1.3rem;
+    padding: 8px 10px 10px 10px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.container input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #005ec2;
+}
+
+.container input{
+    margin-right: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 200px;
+    font-size: 1rem;
+}
+
+.container p{
+    margin-bottom: 1px;
+}
+
+.container h3{
+    line-height: 1.5;
+    padding-top: 15px;
+    font-size: 2rem;
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.container{
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container .texto{
+    font-size: 1.4rem;
+    background-color: #e0e1d9;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+
+header{
+    background-color: rgb(85, 85, 237);
+    height: 20vh;
+    margin: 0 auto;
+    width: 100vw;
+    margin: -22px 0px 0px -10px;
+}
+
+header h1{
+    color: white;
+    text-align: center;
+    padding-top: 8vh;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2rem;
+}
+
+/*===========Style JavaScrip==========*/
+
+#resCom{
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px 5px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    width: 420px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+#resCdi{
+    width: 420px;
+    max-width: 100%;
+    text-align: center;
+    padding:5px;
+    border-radius: 15px;
+    font-weight: bold;
+    margin:  0 auto;
+}
+
+#resIpca{
+    width: 400px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+    font-weight: bolder;
+    margin: 0 auto;
+}
+
+
+/*===========@Midia======*/
+
+@media (max-width: 522px){
+    .limpar{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .limpar input[type="submit"]{
+        margin-bottom: -10px;
+    }
+    
+}
+
+@media (max-width: 414px){
+   
+
+    #resCom, #resCdi, #resIpca{
+        width: 250px;
+    }
+   
+   .container input{
+       width: 250px;
+   }
+
+   .container input[type="submit"]{
+       width:265px
+   }
+   .link{
+       text-align: center;
+   }
+        
+}
