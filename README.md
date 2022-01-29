@@ -12,9 +12,9 @@
 https://wallace-nascimento.github.io/calculandorenda/
 
 <div display="flex">
- <img src="https://user-images.githubusercontent.com/87508400/151678276-1ecc393c-be66-4bfb-aaf1-c779d816abfe.JPG" width="280px"/>
-<img src="https://user-images.githubusercontent.com/87508400/151678275-63c9e749-c627-4e47-804d-f9b56fc7e490.JPG" width="280px"/>
-<img src="https://user-images.githubusercontent.com/87508400/151678277-fae6f73f-9090-42f3-bace-75c7c657ad2a.JPG" width="280px"/>
+ <img src="https://user-images.githubusercontent.com/87508400/151678276-1ecc393c-be66-4bfb-aaf1-c779d816abfe.JPG" width="250px"/>
+<img src="https://user-images.githubusercontent.com/87508400/151678275-63c9e749-c627-4e47-804d-f9b56fc7e490.JPG" width="250px"/>
+<img src="https://user-images.githubusercontent.com/87508400/151678277-fae6f73f-9090-42f3-bace-75c7c657ad2a.JPG" width="250px"/>
 </div>
 
 # Tecnologia:
