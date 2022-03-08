@@ -39,7 +39,6 @@
                         <input type="text" name='tempo' id="tempo" >
                     </div>
             
-                
                     <div class="limpar">
                         <input type="submit" id="botao" onclick="jurosComposto()" value="Calcular">
                         <input type="submit" value="Limpar" onclick="carregar()">
@@ -59,19 +58,19 @@
                 <div class="cdi">
                     <div>
                         <p>CDI</p>
-                        <input type="text" id="cdi" placeholder="CDI atual EX: 6,25%">
+                        <input type="text" id="cdiAtual" placeholder="CDI atual EX: 6,25%">
                     </div>
                     <div>
                         <p>Taxa do CDI</p>
-                        <input type="text" id="tcdi" placeholder="EX: 120% do CDI"><br>
+                        <input type="text" id="taxaCdi" placeholder="EX: 120% do CDI"><br>
                     </div>
             
                     <div class="limpar">
-                        <input type="submit" value="Calcular" onclick="taxaCdi()">
+                        <input type="submit" value="Calcular" onclick="calcCdi()">
                         <input type="submit" value="Limpar" onclick="carregar()">
                     </div>
                 </div>   
-                <div id="resCdi">
+                <div id="resultadoCdi">
                     
                 </div>
             
@@ -85,7 +84,7 @@
                     <div>
                         <p>Rentabilidade</p>
                         <label for=""></label>
-                        <input type="text" id="rent" placeholder="Rentabilidade Anual">
+                        <input type="text" id="rentabilidade" placeholder="Rentabilidade Anual">
                     </div>
                     <div>
                         <p>IPCA (Inflação)</p>
@@ -99,7 +98,7 @@
                     
                 
                 </div>         
-                <div id="resIpca">
+                <div id="resultadoIpca">
         
                 </div>
                 
