@@ -1,32 +1,29 @@
 
 //============ CALCULO DO JUROS COMPOSTOS===========//
 
-function jurosComposto(){
-  let capital = document.getElementById('cap').value
-  let juros = document.getElementById('jur').value
-  let tempo= document.getElementById('tem').value
-  let resCom = document.querySelector('#resCom')
-  let juros2 = parseFloat(juros.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
-  let capital2 = parseFloat(capital.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
+const jurosComposto=()=>{
+  let capital = document.getElementById('capital').value
+  let juros = document.getElementById('juros').value
+  let tempo= document.getElementById('tempo').value
+  let resultadoComposto = document.querySelector('#resultadoComposto')
+  juros = parseFloat(juros.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
+  capital = parseFloat(capital.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
 
-  cal = capital2 * (1 + juros2 / 100)**tempo//formula do juros compostos
+  calc = capital * (1 + juros / 100)**tempo//formula do juros compostos
 
   dinheiro = cal. toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});//Conversão para moeda
 
-  if(capital2.length == 0 || juros2.length == 0 || tempo.length == 0){
+  if(capital.length == 0 || juros.length == 0 || tempo.length == 0){
     alert('Verifique os campos e tente novamente.')
   }
   else{
-     taxa = cal - capital2//formula da rentabilidade
+     taxa = calc - capital//formula da rentabilidade
      taxaConver = taxa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});//Conversão para moeda
 
-     resCom.style.backgroundColor="#52a6ff"
-     resCom.style.color="white"
+     resultadoComposto.style.backgroundColor="#52a6ff"
+     resultadoComposto.style.color="white"
 
-    
-     resCom.innerHTML += `<span>Juros do período</span> <br>${taxaConver} <br><br> Total investido <br>${dinheiro}`
-    
-    
+     resultadoComposto.innerHTML += `<span>Juros do período</span> <br>${taxaConver} <br><br> Total investido <br>${dinheiro}`
   }
   //Limpar formulário 
   cap.value = ''
@@ -35,7 +32,6 @@ function jurosComposto(){
   jur.focus()
   tem.value = ''
   tem.focus()
-  
 }
 
 //=================== CALCULO DO CDI========================//
