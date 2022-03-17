@@ -1,21 +1,20 @@
-
 //============ CALCULO DO JUROS COMPOSTOS===========//
 
-const jurosComposto=()=>{
-  let capital = document.getElementById('capital').value
-  let juros = document.getElementById('juros').value
-  let tempo= document.getElementById('tempo').value
-  let resultadoComposto = document.querySelector('#resultadoComposto')
+function jurosComposto(){
+  let capital = document.getElementById('cap').value
+  let juros = document.getElementById('jur').value
+  let tempo= document.getElementById('tem').value
+  let resultadoComposto = document.querySelector('#resCom')
 
   //transforma ',' em '.', quando digitado no formulario pelo usuario
   juros = parseFloat(juros.replace(',', '.'))
   capital = parseFloat(capital.replace(',', '.'))
-
+  
   //formula do juros compostos
   calc = capital * (1 + juros / 100)**tempo
-  
+
   //Conversão para moeda
-  dinheiro = calc. toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  resultadoCalc = calc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
   if(capital.length == 0 || juros.length == 0 || tempo.length == 0){
     alert('Verifique os campos e tente novamente.')
@@ -23,92 +22,100 @@ const jurosComposto=()=>{
   else{
     //formula da rentabilidade
      taxa = calc - capital
+     
      //Conversão para moeda
-     taxaConver = taxa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-
-     resultadoComposto.style.backgroundColor="#52a6ff"
-     resultadoComposto.style.color="white"
-
-     resultadoComposto.innerHTML += `<span>Juros do período</span> <br>${taxaConver} <br><br> Total investido <br>${dinheiro}`
+     resultadoJuros = taxa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+     
+     resCom.style.backgroundColor="#52a6ff"
+     resCom.style.color="white"
+     resCom.innerHTML += `<span>Juros do período</span> <br>${resultadoJuros} <br><br> Total investido <br>${resultadoCalc}`
   }
+
   //Limpar formulário 
-  capital.value = ''
-  capital.focus()
-  juros.value = ''
-  juros.focus()
-  tempo.value = ''
-  tempo.focus()
+  cap.value = ''
+  cap.focus() 
+  jur.value = ''
+  jur.focus()
+  tem.value = ''
+  tem.focus()
+  
 }
 
 //=================== CALCULO DO CDI========================//
 
-const calcCdi=()=>{
-  let cdiAtual = document.getElementById('cdiAtual').value
-  let taxaCdi = document.getElementById('taxaCdi').value
-  let resultadoCdi = document.getElementById('resultadoCdi')
+function calcCdi(){
+  let cdiAtual = document.getElementById('cdi').value
+  let taxaCdi = document.getElementById('tcdi').value
+  let resultadoCdi = document.getElementById('resCdi')
+
+  //transforma ',' em '.', quando digitado no formulario pelo usuario
+  let cdiAtualFloat = parseFloat(cdiAtual.replace(',', '.'))
+  let taxaCdiFloat = parseFloat(taxaCdi.replace(',', '.'))
   
-  ////transforma ',' em '.', quando digitado no formulario pelo usuario
-  cdiAtual = parseFloat(cdiAtual.replace(',', '.'))
-  taxaCdi = parseFloat(taxaCdi.replace(',', '.'))
-
-  calc = taxaCdi * (cdiAtual / 100)  
-  if(taxaCdi.length == 0 || cdiAtual.length == 0){
+  if(cdiAtual.length === 0 || taxaCdi.length === 0){
     alert('Verifique os campos e tente novamente.')
-  }
 
-  else{
+  } else{
+    //Fomula do cdi
+    calc = taxaCdiFloat * (cdiAtualFloat / 100)
+
     resultadoCdi.style.backgroundColor="#52a6ff"
     resultadoCdi.style.color="white"
     resultadoCdi.innerHTML = `Taxa CDI<br> ${calc.toFixed(2)}%`
   }
 
   //Limpar formulário
-  cdiAtual.value = ''
-  cdiAtual.focus()
-  taxaCdi.value = ''
-  taxaCdi.focus()
+  cdi.value = ''
+  cdi.focus()
+  tcdi.value = ''
+  tcdi.focus()
 }
 
 //=================== CALCULO DO IPCA(INFLAÇÃO)========================//
 
 
 
-const calIpca=()=>{
-  let rentabilidade = document.getElementById('rentabilidade').value
-  let ipca = document.getElementById('ipca').value
-  let resIpca = document.getElementById('resIpca')
-  let rentabilidade2 = parseFloat(rentabilidade.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
-  ipca = parseFloat(ipca.replace(',', '.'))//transforma ',' em '.', quando digitado no formulario pelo usuario
+function calIpca(){
+  let rentabilidade = document.getElementById('rent').value
+  let ipca = document.getElementById('fipca').value
+  let resultadoIpca = document.getElementById('resIpca')
 
-  calc = ((1 + rentabilidade2 / 100) / (1 + ipca / 100) -1) * 100 
+  //transforma ',' em '.', quando digitado no formulario pelo usuario
+  const rentabilidadeFloat = parseFloat(rentabilidade.replace(',', '.'))
+  const ipcaFloat = parseFloat(ipca.replace(',', '.'))
 
+  //Formula do IPCA
+  ipcaCalc = ((1 + rentabilidadeFloat / 100) / (1 + ipcaFloat / 100) -1) * 100
+   
   if(rentabilidade.length == 0 || ipca.length == 0){
     alert('Verifique os campos e tente novamente.')
   }
-  else if(calc < 0){
+  else if(ipcaCalc < 0){
+
     resultadoIpca.style.color="red"
     resultadoIpca.style.backgroundColor="white"
-    resultadoIpca.innerHTML = `Rentabilidade Anual <br>${calc.toFixed(2)}%`
+    resultadoIpca.innerHTML = `Rentabilidade Anual <br>${ipcaCalc.toFixed(2)}%`
   }
 
   else{
     resultadoIpca.style.color="blue"
     resultadoIpca.style.backgroundColor="white"
-    resultadoIpca.innerHTML = `Rentabilidade Anual<br>${calc.toFixed(2)}%`
+    resultadoIpca.innerHTML = `Rentabilidade Anual<br>${ipcaCalc.toFixed(2)}%`
   }
   //Limpar formulário
-  rentabilidade.value = ''
-  rentabilidade.focus()
-  ipca.value = ''
-  rentabilidade.focus()
+  rent.value = ''
+  rent.focus()
+  fipca.value = '' 
+  fipca.focus()
 }
 
 
 //Função para reseta e fazer uma nova consulta 
 function carregar(){
-  let resultadoComposto = document.querySelector('#resultadoComposto')
-  let resultadoCdi = document.querySelector('#resultadoCdi')
-  let resultadoIpca = document.querySelector('#resultadoIpca')
+  let resultadoComposto = document.querySelector('#resCom')
+  let resultadoCdi = document.querySelector('#resCdi')
+  let resultadoIpca = document.querySelector('#resIpca')
+
   resultadoComposto.style.backgroundColor='#e0e1d9'
   resultadoIpca.style.backgroundColor='#e0e1d9'
   resultadoCdi.style.backgroundColor='#e0e1d9'
