@@ -33,8 +33,11 @@ const jurosComposto=()=>{
   }
   //Limpar formulário 
   capital.value = ''
+  capital.focus()
   juros.value = ''
+  juros.focus()
   tempo.value = ''
+  tempo.focus()
 }
 
 //=================== CALCULO DO CDI========================//
@@ -49,7 +52,7 @@ const calcCdi=()=>{
   taxaCdi = parseFloat(taxaCdi.replace(',', '.'))
 
   calc = taxaCdi * (cdiAtual / 100)  
-  if(cdiAtual.length === 0 || taxaCdi.length === 0){
+  if(taxaCdi.length == 0 || cdiAtual.length == 0){
     alert('Verifique os campos e tente novamente.')
   }
 
@@ -61,7 +64,9 @@ const calcCdi=()=>{
 
   //Limpar formulário
   cdiAtual.value = ''
+  cdiAtual.focus()
   taxaCdi.value = ''
+  taxaCdi.focus()
 }
 
 //=================== CALCULO DO IPCA(INFLAÇÃO)========================//
@@ -93,7 +98,9 @@ const calIpca=()=>{
   }
   //Limpar formulário
   rentabilidade.value = ''
-  ipca.value = '' 
+  rentabilidade.focus()
+  ipca.value = ''
+  rentabilidade.focus()
 }
 
 
