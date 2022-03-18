@@ -28,19 +28,19 @@
             
                     <div>
                         <p>Aporte Inicial</p>
-                        <input type="text" name='capital' id="capital" placeholder="R$ 0,00">
+                        <input type="text" name='capital' id="fcapital" placeholder="R$ 0,00">
                     </div>
                     <div>
                         <p>Juros mensal</p>
-                        <input type="text" name="juros" id="juros" placeholder="0,00">
+                        <input type="text" name="juros" id="fjuros" placeholder="0,00">
                     </div>
                     <div>
                         <p>Tempo em meses</p>
-                        <input type="text" name='tempo' id="tempo" >
+                        <input type="text" name='tempo' id="ftempo" >
                     </div>
             
                     <div class="limpar">
-                        <input type="submit" id="botao" onclick="jurosComposto()" value="Calcular">
+                        <input type="submit" id="botao" onclick="calcJurosComposto()" value="Calcular">
                         <input type="submit" value="Limpar" onclick="carregar()">
                     </div>
                 
@@ -58,11 +58,11 @@
                 <div class="cdi">
                     <div>
                         <p>CDI</p>
-                        <input type="text" id="cdiAtual" placeholder="CDI atual EX: 6,25%">
+                        <input type="text" id="fcdiAtual" placeholder="CDI atual EX: 6,25%">
                     </div>
                     <div>
                         <p>Taxa do CDI</p>
-                        <input type="text" id="taxaCdi" placeholder="EX: 120% do CDI"><br>
+                        <input type="text" id="ftaxaCdi" placeholder="EX: 120% do CDI"><br>
                     </div>
             
                     <div class="limpar">
@@ -84,15 +84,15 @@
                     <div>
                         <p>Rentabilidade</p>
                         <label for=""></label>
-                        <input type="text" id="rentabilidade" placeholder="Rentabilidade Anual">
+                        <input type="text" id="frentabilidade" placeholder="Rentabilidade Anual">
                     </div>
                     <div>
                         <p>IPCA (Inflação)</p>
-                        <input type="text" id="ipca" placeholder="IPCA Acumulado"> <br>
+                        <input type="text" id="fipca" placeholder="IPCA Acumulado"> <br>
                     </div>
                 
                     <div class="limpar">
-                        <input type="submit" value="Calcular" onclick="calIpca()">
+                        <input type="submit" value="Calcular" onclick="calcIpca()">
                         <input type="submit" value="Limpar" onclick="carregar()">
                     </div>
                     
