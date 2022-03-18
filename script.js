@@ -1,10 +1,10 @@
 //============ CALCULO DO JUROS COMPOSTOS===========//
 
-function jurosComposto(){
-  let capital = document.getElementById('cap').value
-  let juros = document.getElementById('jur').value
-  let tempo= document.getElementById('tem').value
-  let resultadoComposto = document.querySelector('#resCom')
+const calcJurosComposto=()=>{
+  let capital = document.getElementById('fcapital').value
+  let juros = document.getElementById('fjuros').value
+  let tempo= document.getElementById('ftempo').value
+  let resultadoComposto = document.querySelector('#resultadoComposto')
 
   //transforma ',' em '.', quando digitado no formulario pelo usuario
   juros = parseFloat(juros.replace(',', '.'))
@@ -26,27 +26,27 @@ function jurosComposto(){
      //Conversão para moeda
      resultadoJuros = taxa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
      
-     resCom.style.backgroundColor="#52a6ff"
-     resCom.style.color="white"
-     resCom.innerHTML += `<span>Juros do período</span> <br>${resultadoJuros} <br><br> Total investido <br>${resultadoCalc}`
+     resultadoComposto.style.backgroundColor="#52a6ff"
+     resultadoComposto.style.color="white"
+     resultadoComposto.innerHTML += `<span>Juros do período</span> <br>${resultadoJuros} <br><br> Total investido <br>${resultadoCalc}`
   }
 
   //Limpar formulário 
-  cap.value = ''
-  cap.focus() 
-  jur.value = ''
-  jur.focus()
-  tem.value = ''
-  tem.focus()
+  fcapital.value = ''
+  fcapital.focus() 
+  fjuros.value = ''
+  fjuros.focus()
+  ftempo.value = ''
+  ftempo.focus()
   
 }
 
 //=================== CALCULO DO CDI========================//
 
-function calcCdi(){
-  let cdiAtual = document.getElementById('cdi').value
-  let taxaCdi = document.getElementById('tcdi').value
-  let resultadoCdi = document.getElementById('resCdi')
+const calcCdi=()=>{
+  let cdiAtual = document.getElementById('fcdiAtual').value
+  let taxaCdi = document.getElementById('ftaxaCdi').value
+  let resultadoCdi = document.getElementById('resultadoCdi')
 
   //transforma ',' em '.', quando digitado no formulario pelo usuario
   let cdiAtualFloat = parseFloat(cdiAtual.replace(',', '.'))
@@ -65,20 +65,20 @@ function calcCdi(){
   }
 
   //Limpar formulário
-  cdi.value = ''
-  cdi.focus()
-  tcdi.value = ''
-  tcdi.focus()
+  fcdiAtual.value = ''
+  fcdiAtual.focus()
+  ftaxaCdi.value = ''
+  ftaxaCdi.focus()
 }
 
 //=================== CALCULO DO IPCA(INFLAÇÃO)========================//
 
 
 
-function calIpca(){
-  let rentabilidade = document.getElementById('rent').value
+const calcIpca=()=>{
+  let rentabilidade = document.getElementById('frentabilidade').value
   let ipca = document.getElementById('fipca').value
-  let resultadoIpca = document.getElementById('resIpca')
+  let resultadoIpca = document.getElementById('resultadoIpca')
 
   //transforma ',' em '.', quando digitado no formulario pelo usuario
   const rentabilidadeFloat = parseFloat(rentabilidade.replace(',', '.'))
@@ -103,8 +103,8 @@ function calIpca(){
     resultadoIpca.innerHTML = `Rentabilidade Anual<br>${ipcaCalc.toFixed(2)}%`
   }
   //Limpar formulário
-  rent.value = ''
-  rent.focus()
+  frentabilidade.value = ''
+  frentabilidade.focus()
   fipca.value = '' 
   fipca.focus()
 }
@@ -112,9 +112,9 @@ function calIpca(){
 
 //Função para reseta e fazer uma nova consulta 
 function carregar(){
-  let resultadoComposto = document.querySelector('#resCom')
-  let resultadoCdi = document.querySelector('#resCdi')
-  let resultadoIpca = document.querySelector('#resIpca')
+  let resultadoComposto = document.querySelector('#resultadoComposto')
+  let resultadoCdi = document.querySelector('#resultadoCdi')
+  let resultadoIpca = document.querySelector('#resultadoIpca')
 
   resultadoComposto.style.backgroundColor='#e0e1d9'
   resultadoIpca.style.backgroundColor='#e0e1d9'
